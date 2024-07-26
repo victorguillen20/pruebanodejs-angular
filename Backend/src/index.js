@@ -3,6 +3,9 @@ import {sequelize} from './database/database.js';
 
 
 
+
+
+
 async function main(){
     try {
         await sequelize.sync({force: false});
