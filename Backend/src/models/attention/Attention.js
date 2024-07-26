@@ -1,9 +1,5 @@
 import {DataTypes} from 'sequelize';
 import {sequelize} from '../../database/database.js';
-import { Turn } from '../turn/Turn.js';
-import { Client } from '../client/Cliente.js';
-import { Attentiontype } from './Attentiontype.js';
-import { Attentionstatus } from '../status/Attentionstatus.js';
 
 export const Attention = sequelize.define('attention', {
     idattention: {
@@ -13,35 +9,19 @@ export const Attention = sequelize.define('attention', {
     },
     turn_idturn: {
         type: DataTypes.INTEGER,
-        allowNull: false,
-        references: {
-            model: Turn,
-            key: 'idturn'
-        }
+        allowNull: false
     },
     client_idclient: {
         type: DataTypes.INTEGER,
-        allowNull: false,
-        references: {
-            model: Client,
-            key: 'idclient'
-        }
+        allowNull: false
     },
     attentiontype_idattentiontype: {
         type: DataTypes.STRING(3),
-        allowNull: false,
-        references: {
-            model: Attentiontype,
-            key: 'idattentiontype'
-        }
+        allowNull: false
     },
     attentionstatus_idstatus: {
         type: DataTypes.INTEGER,
-        allowNull: false,
-        references: {
-            model: Attentionstatus,
-            key: 'idstatus'
-        }
+        allowNull: false        
     }
 },
 {

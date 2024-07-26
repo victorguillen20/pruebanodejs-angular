@@ -8,7 +8,7 @@ import { findRoleById,
 
 
 export const createUser = async (req, res) => {
-    const { username, email, password, rol_idrol, creationdate, usercreate, userapproval, dateapproval, userstatus_idstatus } = req.body;
+    const { username, email, password, rol_idrol, creationdate, usercreate} = req.body;
 
     try {
 
@@ -34,32 +34,12 @@ export const createUser = async (req, res) => {
             password,
             rol_idrol,
             creationdate,
-            usercreate,
-            userapproval,
-            dateapproval,
-            userstatus_idstatus
+            usercreate,                                    
         });
 
         return res.status(201).json({ success: true, message: 'Usuario creado exitosamente', user: newUser });
     } catch (error) {
         console.error(error);
         return res.status(500).json({ success: false, message: 'Error al crear el usuario' });
-    }
-};
-
-export const userAproved = async (req, res) => {
-    const { userapproval, dateapproval, userstatus_idstatus } = req.body;
-
-    try {        
-        const newUser = await User.create({            
-            userapproval,
-            dateapproval,
-            userstatus_idstatus
-        });
-
-        return res.status(201).json({ success: true, message: 'Usuario aprobado', user: newUser });
-    } catch (error) {
-        console.error(error);
-        return res.status(500).json({ success: false, message: 'Error del servidor' });
     }
 };

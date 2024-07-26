@@ -32,16 +32,13 @@ export const User = sequelize.define('users', {
         allowNull: false
     },
     userapproval: {
-        type: DataTypes.INTEGER,
-        allowNull: false
+        type: DataTypes.INTEGER        
     },
     dateapproval: {
-        type: DataTypes.DATE,
-        allowNull: false
+        type: DataTypes.DATE        
     },
     userstatus_idstatus: {
-        type: DataTypes.STRING(3),
-        allowNull: false
+        type: DataTypes.STRING(3)        
     }
 },
 {

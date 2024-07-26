@@ -1,5 +1,6 @@
 import {DataTypes} from 'sequelize';
 import {sequelize} from '../../database/database.js';
+import {Attention} from '../../models/attention/Attention.js'
 
 export const Attentionstatus = sequelize.define('attentionstatus', {
     idstatus: {
@@ -16,3 +17,15 @@ export const Attentionstatus = sequelize.define('attentionstatus', {
     timestamps: false
 });
 
+
+Attentionstatus.hasMany(Attention, { 
+    foreignKey: 'attentionstatus_idstatus',
+    sourceKey: 'idstatus',
+    as: 'attention'
+});
+
+Attention.belongsTo(Attentionstatus, { 
+    foreignKey: 'attentionstatus_idstatus', 
+    targetId: 'idstatus',
+    as: 'attentionstatus'
+});
