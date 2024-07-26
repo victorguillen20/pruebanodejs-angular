@@ -1,8 +1,7 @@
 import Sequelize from "sequelize";
-import {sequelize} from './database/database.js';
 
 export const sequelize = new Sequelize(
-    "usersdb", 
+    "internetservices", 
     "postgres", 
     "1313", 
     {
