@@ -1,0 +1,11 @@
+Clientes:
+
+{
+	"name": "",
+	"lastname": "",
+	"identification": "",
+	"email": "",
+	"phonenumber": "",
+	"address": "",
+	"referenceaddress": ""
+}

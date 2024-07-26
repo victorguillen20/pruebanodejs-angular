@@ -15,6 +15,10 @@ export const Service = sequelize.define('service', {
         type: DataTypes.STRING(150),
         allowNull: false
     },
+    velocity: {
+        type: DataTypes.STRING(6),
+        allowNull: false
+    },
     price: {
         type: DataTypes.STRING(10),
         allowNull: false
