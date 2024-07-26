@@ -21,10 +21,6 @@ export const getClient = async (req, res) => {
 }
 
 
-export const loginClient = (req, res) => {
-    res.send('client Login');
-}
-
 export const registerClient = async (req, res) => {
     try {
         const {name, lastname, identification, email, phonenumber, address, referenceaddress} = req.body

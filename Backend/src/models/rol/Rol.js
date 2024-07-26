@@ -1,7 +1,9 @@
 import {DataTypes} from 'sequelize';
 import {sequelize} from '../../database/database.js';
+import {User} from '../user/User.js'
 
-export const Rol = sequelize.define('rol', {
+
+export const Rol = sequelize.define('rols', {
     idrol: {
         type: DataTypes.INTEGER,
         primaryKey: true,
@@ -16,3 +18,15 @@ export const Rol = sequelize.define('rol', {
     timestamps: false
 });
 
+
+Rol.hasMany(User, { 
+    foreignKey: 'rol_idrol',
+    sourceKey: 'idrol',
+    as: 'users'
+});
+
+User.belongsTo(Rol, { 
+    foreignKey: 'rol_idrol', 
+    targetId: 'idrol',
+    as: 'rols'
+});
