@@ -41,11 +41,54 @@ Los Administradores, pueden aprobar a los Usuarios que los Gestores han registra
 ![image](https://github.com/user-attachments/assets/ff4feb35-d86f-46d8-9283-a4ff154e31bd)
 
 ### Gestor
+**Home**
 En el inicio el `Gestor` tiene lo siguiente:
 1. Marcador de los turnos generados
 2. Una lista de los Usuarios que a creado y necesitan la aprobación de un `Administrador`.
 
 ![image](https://github.com/user-attachments/assets/fbdc70af-3631-4732-b5e8-6d5b2b3aeda9)
+
+**Asignación de Turnos**
+El usuario `Gestor` genera los turnos y los asigna a una Caja, para que los clientes sean atendidos.
+
+![image](https://github.com/user-attachments/assets/26c7a98d-3460-48dd-a852-af6276fdd272)
+
+**Turnos Generados**
+El usuario puede comprobar y por medio de un filtro, buscar los turnos que a generado.
+![image](https://github.com/user-attachments/assets/e4a6aea1-a87e-4e00-9363-820fa7362aac)
+
+**Crear Usuarios**
+En este apartado el usuario `Gestor` tiene la facilidad de crear otros usuarios `Gestores` y `Cajeros`. Posteriormente esto se verá refeljado en la lista de los usuarios que necesitan aprobacion del administrador.
+![image](https://github.com/user-attachments/assets/9426cd04-4f7f-4d3b-a5f4-c9ec8da0448d)
+
+### Cajero 
+**Mantenimiento**
+En este apartado el `Cajero` puede visualizar los Clientes que a registrado.
+
+![image](https://github.com/user-attachments/assets/89a30141-dd07-4cf4-8787-4ee9b9fbe841)
+
+Al dar clic sobre la cedula de un cliente, permite al `Cajero` Actualizar los datos del cliente.
+
+![image](https://github.com/user-attachments/assets/18937709-1b0f-460e-a738-e949cb554fa0)
+
+**Carga de Archivos**
+El `Cajero` tiene la funcionalidad de poder crear Clientes de forma masiva.
+
+![image](https://github.com/user-attachments/assets/e82ba40a-6005-4b2f-9cfe-1cd17950ca71)
+
+## Correcciones por parte del Encargado
+
+El sistema estaba permitiendo el registro de usuarios repetidos, las validaciones ya estaban implementadas simplemente era un problema de lógica, a continuación el lugar en donde estaba el conflicto:
+
+![image](https://github.com/user-attachments/assets/bb1a9b0e-ad75-4c13-9267-8509f9ae70d2)
+
+La función que permite verificar si el usuario existe en la base de datos:
+
+![image](https://github.com/user-attachments/assets/3bf1899f-8b63-4c81-9ae7-3c3e9f8dd90c)
+
+
+
+
 
 
 
