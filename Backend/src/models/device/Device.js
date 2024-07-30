@@ -1,8 +1,8 @@
 import {DataTypes} from 'sequelize';
 import {sequelize} from '../../database/database.js';
-import { Service } from '../service/Service.js'
 
-export const Device = sequelize.define('device', {
+
+export const Device = sequelize.define('devices', {
     iddevice: {
         type: DataTypes.INTEGER,
         primaryKey: true,
@@ -14,11 +14,7 @@ export const Device = sequelize.define('device', {
     },
     service_idservice: {
         type: DataTypes.INTEGER,
-        allowNull: false,
-        references: {
-            model: Service,
-            key: 'idservice'
-        }
+        allowNull: false
     }
 },
 {

@@ -78,3 +78,34 @@ export const validatePassword = (password) => {
 
     return { success: true };
 };
+
+export const getUsernameById = async (iduser) => {
+    try {
+        const user = await User.findOne({
+            where: { iduser },
+            attributes: ['username']
+        });
+
+        return user ? user.username : null;
+    } catch (error) {
+        console.error(error);
+        return null;
+    }
+};
+
+export const getUserIdByUsername = async (username) => {
+    try {
+        const user = await User.findOne({
+            where: { username }
+        });
+        
+        if (user) {
+            return user.iduser;
+        } else {
+            return null; 
+        }
+    } catch (error) {
+        console.error('Error al obtener el ID de usuario:', error);
+        throw error; 
+    }
+};

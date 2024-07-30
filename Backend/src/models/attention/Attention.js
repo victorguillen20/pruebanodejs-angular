@@ -1,7 +1,7 @@
 import {DataTypes} from 'sequelize';
 import {sequelize} from '../../database/database.js';
 
-export const Attention = sequelize.define('attention', {
+export const Attention = sequelize.define('attentions', {
     idattention: {
         type: DataTypes.INTEGER,
         primaryKey: true,

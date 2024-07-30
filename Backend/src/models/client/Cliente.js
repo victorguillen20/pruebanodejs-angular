@@ -1,8 +1,7 @@
 import {DataTypes} from 'sequelize';
 import {sequelize} from '../../database/database.js';
-import { Attention } from '../attention/Attention.js';
 
-export const Client = sequelize.define('client', {
+export const Client = sequelize.define('clients', {
     idclient: {
         type: DataTypes.INTEGER,
         primaryKey: true,
@@ -39,18 +38,6 @@ export const Client = sequelize.define('client', {
 },
 {
     timestamps: false
-});
-
-Client.hasMany(Attention, { 
-    foreignKey: 'client_idclient',
-    sourceKey: 'idclient',
-    as: 'attention'
-});
-
-Attention.belongsTo(Client, { 
-    foreignKey: 'client_idclient', 
-    targetId: 'idclient',
-    as: 'client'
 });
 
 

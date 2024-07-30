@@ -1,6 +1,6 @@
 import {DataTypes} from 'sequelize';
 import {sequelize} from '../../database/database.js';
-import { Client } from '../client/Cliente.js';
+
 
 export const Payments = sequelize.define('payments', {
     idpayment: {
@@ -14,11 +14,7 @@ export const Payments = sequelize.define('payments', {
     },
     client_idclient: {
         type: DataTypes.INTEGER,
-        allowNull: false,
-        references: {
-            model: Client,
-            key: 'idclient'
-        }
+        allowNull: false
     }
 },
 {

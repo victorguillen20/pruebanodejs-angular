@@ -1,8 +1,7 @@
 import {DataTypes} from 'sequelize';
 import {sequelize} from '../../database/database.js';
-import {Attention} from '../../models/attention/Attention.js'
 
-export const Attentionstatus = sequelize.define('attentionstatus', {
+export const Attentionstatus = sequelize.define('attentionstatuses', {
     idstatus: {
         type: DataTypes.INTEGER,
         primaryKey: true,
@@ -18,14 +17,3 @@ export const Attentionstatus = sequelize.define('attentionstatus', {
 });
 
 
-Attentionstatus.hasMany(Attention, { 
-    foreignKey: 'attentionstatus_idstatus',
-    sourceKey: 'idstatus',
-    as: 'attention'
-});
-
-Attention.belongsTo(Attentionstatus, { 
-    foreignKey: 'attentionstatus_idstatus', 
-    targetId: 'idstatus',
-    as: 'attentionstatus'
-});
