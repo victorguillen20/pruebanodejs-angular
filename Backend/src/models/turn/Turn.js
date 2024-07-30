@@ -1,8 +1,8 @@
 import {DataTypes} from 'sequelize';
 import {sequelize} from '../../database/database.js';
-import { Attention } from '../attention/Attention.js';
 
-export const Turn = sequelize.define('turn', {
+
+export const Turn = sequelize.define('turns', {
     idturn: {
         type: DataTypes.INTEGER,
         primaryKey: true,
@@ -28,16 +28,3 @@ export const Turn = sequelize.define('turn', {
 {
     timestamps: false
 });
-
-Turn.hasMany(Attention, { 
-    foreignKey: 'turn_idturn',
-    sourceKey: 'idturn',
-    as: 'attention'
-});
-
-Attention.belongsTo(Turn, { 
-    foreignKey: 'turn_idturn', 
-    targetId: 'idturn',
-    as: 'turn'
-});
-

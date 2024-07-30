@@ -1,6 +1,9 @@
 import express from 'express';
 import clientsRoutes from './routes/client.routes.js'
 import authRoutes from './routes/auth.routes.js'
+import adminRoutes from './routes/admin.routes.js'
+import turnRoutes from './routes/turn.routes.js'
+import userRoutes from './routes/user.routes.js'
 import cors from 'cors';
 
 
@@ -20,7 +23,10 @@ app.use(cors({
     credentials: true // Permitir envío de cookies o credenciales
   }));
 
+app.use(adminRoutes);
 app.use(clientsRoutes);
 app.use(authRoutes);
+app.use(turnRoutes);
+app.use(userRoutes);
 
 export default app;

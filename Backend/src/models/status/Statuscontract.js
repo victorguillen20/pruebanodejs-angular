@@ -1,7 +1,8 @@
 import {DataTypes} from 'sequelize';
 import {sequelize} from '../../database/database.js';
 
-export const Statuscontract = sequelize.define('statuscontract', {
+
+export const Statuscontract = sequelize.define('statuscontracts', {
     idstatus: {
         type: DataTypes.STRING(3),
         primaryKey: true

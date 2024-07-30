@@ -1,3 +1,4 @@
+Post = http://localhost:3000/client/register
 Clientes:
 
 {
@@ -9,3 +10,109 @@ Clientes:
 	"address": "",
 	"referenceaddress": ""
 }
+
+
+insert into cash(cashdescription, active)
+values( 'Caja de Atención al Cliente', 'Y' );
+insert into cash(cashdescription, active)
+values( 'Punto de Servicio del Cajero', 'N' );
+insert into cash(cashdescription, active)
+values( 'Caja de Servicios de Internet', 'Y' );
+insert into cash(cashdescription, active)
+values( 'Estación de Gestión de Pagos', 'Y' );
+
+select*from cash
+insert into rols( rolname )
+	values( 'Administrador' );
+insert into rols( rolname )
+	values( 'Gestor' );
+insert into rols( rolname )
+	values( 'Cajero' );
+
+insert into userstatuses( idstatus, description )
+	values( 'A', 'Activo' );
+insert into userstatuses( idstatus, description )
+	values( 'I', 'Inactivo' );
+insert into userstatuses( idstatus, description )
+	values( 'B', 'Bloqueado' );
+
+select*from userstatuses
+select*from turns
+	
+select*from rols
+
+insert into users(username, email, password, rol_idrol, creationdate,
+	usercreate, userapproval, dateapproval, userstatus_idstatus)
+values('vgguillen', 'vgguillen20@gmail.com', '131313', 1, '25/07/2024', 1, 1, '25/07/2024',
+   'A');
+insert into users(username, email, password, rol_idrol, creationdate,
+	usercreate, userapproval, dateapproval, userstatus_idstatus)
+values('rburgos', 'rburgos28@gmail.com', '131313', 1, '26/07/2024', 1, 1, '26/07/2024',
+   'A');
+insert into users(username, email, password, rol_idrol, creationdate,
+	usercreate, userapproval, dateapproval, userstatus_idstatus)
+values('GestorUno1', 'gestor1@gmail.com', '131313', 2, '25/07/2024', 1, 1, '25/07/2024',
+   'A');
+insert into users(username, email, password, rol_idrol, creationdate,
+	usercreate, userapproval, dateapproval, userstatus_idstatus)
+values('GestorDos2', 'gestor2@gmail.com', '131313', 2, '26/07/2024', 2, 2, '26/07/2024',
+   'A');
+insert into users(username, email, password, rol_idrol, creationdate,
+	usercreate, userapproval, dateapproval, userstatus_idstatus)
+values('CajeroUno1', 'cajero1@gmail.com', '131313', 3, '25/07/2024', 3, 1, '25/07/2024',
+   'A');
+insert into users(username, email, password, rol_idrol, creationdate,
+	usercreate, userapproval, dateapproval, userstatus_idstatus)
+values('CajeroDos2', 'cajero2@gmail.com', '131313', 3, '25/07/2024', 4, 2, '25/07/2024',
+   'A');
+insert into users(username, email, password, rol_idrol, creationdate,
+	usercreate, userapproval, dateapproval, userstatus_idstatus)
+values('CajeroTres3', 'cajero3@gmail.com', '131313', 3, '27/07/2024', 3, 1, '27/07/2024',
+   'A');
+insert into users(username, email, password, rol_idrol, creationdate,
+	usercreate, userapproval, dateapproval, userstatus_idstatus)
+values('CajeroCuatro4', 'cajero4@gmail.com', '131313', 3, '28/07/2024', 4, 2, '28/07/2024',
+   'A');
+insert into users(username, email, password, rol_idrol, creationdate,
+	usercreate, userapproval, dateapproval, userstatus_idstatus)
+values('CajeroCinco5', 'cajero5@gmail.com', '131313', 3, '29/07/2024', 3, 1, '29/07/2024',
+   'B');
+
+insert into users(username, email, password, rol_idrol, creationdate,
+	usercreate, userapproval, dateapproval, userstatus_idstatus)
+values('CajeroSeis6', 'cajero6@gmail.com', '131313', 3, '29/07/2024', 4, 2, '29/07/2024',
+   'I');
+
+
+select*from users
+	select*from usercashes
+insert into usercashes( user_iduser, cash_idcash)
+values( 5, 1 );
+insert into usercashes( user_iduser, cash_idcash)
+values( 6, 2 );
+insert into usercashes( user_iduser, cash_idcash)
+values( 7, 3 );
+insert into usercashes( user_iduser, cash_idcash)
+values( 8, 4 );
+insert into usercashes( user_iduser, cash_idcash)
+values( 9, 1 );
+insert into usercashes( user_iduser, cash_idcash)
+values( 10, 2 );
+
+select*from attentiontypes
+
+insert into attentiontypes ( idattentiontype, description )
+values( 'AC', 'Atencion al cliente' );
+insert into attentiontypes ( idattentiontype, description )
+values( 'PS', 'Pago de servicio' );
+
+insert into attentionstatuses( description )
+values( 'En Espera' );
+insert into attentionstatuses( description )
+values( 'Resuelto' );
+
+select*from attentionstatuses
+
+insert into turns( description, date, cash_idcash, usergestorid )
+
+

@@ -19,9 +19,9 @@ export const Authentication = async (req, res) => {
             rols = getRole.rol
         }
         if (users) {
-            return res.json({ isValid: users.isValid, message: 'Usuario Logueado', rol: rols }); 
+            return res.json({ isValid: true, message: 'Usuario Logueado', rol: rols, username: username }); 
         }               
     } catch (error) {
-        return res.json({ isValid: false, message: 'Error de credenciales', rol: ''});
+        return res.json({ isValid: false, message: 'Error de credenciales', rol: '', username: ''});
     }
 };
