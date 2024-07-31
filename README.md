@@ -106,6 +106,11 @@ Se implementó esta función en el archivo de validaciones auth.utils.js
 
 ![image](https://github.com/user-attachments/assets/07bc54c3-d767-4671-a330-17c648811c62)
 
+Se agregó también el apartado para recuperar una contraseña por los siguientes parámetros:
+* Username
+* Email
+
+![image](https://github.com/user-attachments/assets/e9ef90f9-2624-4af3-9dbe-0687d4fbfbf4)
 
 
 
