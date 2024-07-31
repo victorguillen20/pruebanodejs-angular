@@ -22,12 +22,12 @@ export const createUser = async (req, res) => {
         if (!validauser.isValid) {
             return res.status(400).json({success: validauser.isValid, message: validauser.message});
         }
-        const userExists = findUserByUsername();
+        const userExists = await findUserByUsername();
         if (userExists.success) {
             return res.status(401).json({success: false, message: 'Usuario existente.'});
         }
         const passvalid = validatePassword(password);
-        if (!passvalid) {
+        if (!passvalid.success) {
             return res.status(401).json({success: false, message: passvalid.message});
         }
         const newUser = await User.create({

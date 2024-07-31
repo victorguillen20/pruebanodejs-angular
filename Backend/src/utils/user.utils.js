@@ -76,7 +76,7 @@ export const validatePassword = (password) => {
         return { success: false, message: 'La contraseña debe tener al menos una letra mayúscula.' };
     }
 
-    return { success: true };
+    return { success: true, message: 'Contraseña válida.' };
 };
 
 export const getUsernameById = async (iduser) => {
