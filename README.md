@@ -86,6 +86,27 @@ La función que permite verificar si el usuario existe en la base de datos:
 
 ![image](https://github.com/user-attachments/assets/3bf1899f-8b63-4c81-9ae7-3c3e9f8dd90c)
 
+Se agregaron las validaciones para poder impedir el acceso a los usuarios que aún no esten aprobados por el Administrador.
+
+![image](https://github.com/user-attachments/assets/0a15f6c1-e948-41a7-87f5-5ce3d7e7c971)
+
+Esta es la función que se implementó en el backend en el archivo de validaciones auth.utils.js
+
+![image](https://github.com/user-attachments/assets/5c5d0c3d-8d0e-41a9-b1d3-3dbc22d1ecb4)
+
+y de esta manera se utilizó la lógica para implementar la función en el método de autenticación:
+
+![image](https://github.com/user-attachments/assets/93636861-cc5d-4aae-81b5-3b4209aa6144)
+
+También se agregaron las funciones pertinentes para impedir el acceso de los usuarios con estado `Bloqueado`.
+
+![image](https://github.com/user-attachments/assets/42f121ea-a6b6-4aad-94df-601f0c63ba08)
+
+Se implementó esta función en el archivo de validaciones auth.utils.js
+
+![image](https://github.com/user-attachments/assets/07bc54c3-d767-4671-a330-17c648811c62)
+
+
 
 
 
