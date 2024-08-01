@@ -143,14 +143,6 @@ Y si cumple con los parámetros pues nos permite realizar el update:
 
 
 
-![image](https://github.com/user-attachments/assets/c57cf708-2649-4699-84d8-d5d344305ac5)
-
-
-
-
-
-
-
 
 
 
