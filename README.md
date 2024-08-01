@@ -112,6 +112,21 @@ Se agregó también el apartado para recuperar una contraseña por los siguiente
 
 ![image](https://github.com/user-attachments/assets/e9ef90f9-2624-4af3-9dbe-0687d4fbfbf4)
 
+En el backend en el archivo de user.utils.js se implementaron las siguientes funciones:
+**Chequea si el username y el email existe**
+
+![image](https://github.com/user-attachments/assets/a08ea713-291b-4af1-8a8a-6dd7a1743a10)
+
+**Realiza el update del password**
+
+![image](https://github.com/user-attachments/assets/2c337bd0-3f34-4805-87b2-3f659ee771f4)
+
+y la implementasmosen user.controller.js:
+
+![image](https://github.com/user-attachments/assets/c77c065e-de00-4283-aaf7-44d886212045)
+
+
+
 
 
 
