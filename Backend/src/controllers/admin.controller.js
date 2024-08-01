@@ -18,23 +18,19 @@ export const createUser = async (req, res) => {
     const { username, email, password, rol_idrol, creationdate, usercreate, userapproval, dateapproval, userstatus_idstatus } = req.body;
 
     try {
-
-        const roleCheck = await findRoleById(rol_idrol);
-        if (!roleCheck.success) {
-            return res.status(400).json({success: false, message: 'Error al crear el usuario' });
-        }
-        const validauser = validateUsername(username);
-        if (!validauser.isValid) {
-            return res.status(400).json({success: validauser.isValid, message: validauser.message});
-        }
-        const userExists = findUserByUsername();
+        const userExists = await findUserByUsername(username);
         if (userExists.success) {
             return res.status(401).json({success: false, message: 'Usuario existente.'});
         }
+        const validauser = validateUsername(username);
+        if (!validauser.isValid) {
+            return res.status(400).json({success: false, message: validauser.message});
+        } 
         const passvalid = validatePassword(password);
-        if (!passvalid) {
+        if (!passvalid.success) {
             return res.status(401).json({success: false, message: passvalid.message});
-        }
+        }         
+        
         const newUser = await User.create({
             username,
             email,

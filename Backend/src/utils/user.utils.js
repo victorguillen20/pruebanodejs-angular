@@ -76,7 +76,7 @@ export const validatePassword = (password) => {
         return { success: false, message: 'La contraseña debe tener al menos una letra mayúscula.' };
     }
 
-    return { success: true };
+    return { success: true, message: 'Contraseña válida.' };
 };
 
 export const getUsernameById = async (iduser) => {
@@ -109,3 +109,69 @@ export const getUserIdByUsername = async (username) => {
         throw error; 
     }
 };
+
+export async function updatePassword(username, email, newPassword) {
+    try {
+        const user = await User.findOne({
+            where: {
+                username: username,
+                email: email
+            }
+        });
+
+        if (!user) {
+            return {
+                success: false,
+                message: 'Usuario no encontrado con ese nombre de usuario y correo electrónico.'
+            };
+        }
+
+        await User.update(
+            { password: newPassword },
+            { where: { iduser: user.iduser } }
+        );
+
+        return {
+            success: true,
+            message: 'Contraseña actualizada exitosamente.'
+        };
+    } catch (error) {
+        console.error('Error al actualizar la contraseña:', error);
+        return {
+            success: false,
+            message: 'Hubo un error al actualizar la contraseña. Por favor, inténtalo de nuevo.'
+        };
+    }
+};
+
+export async function checkUserExistence(username, email) {
+    try {
+        // Buscar el usuario por username y email
+        const user = await User.findOne({
+            where: {
+                username: username,
+                email: email
+            }
+        });
+
+        // Verificar si el usuario existe
+        if (user) {
+            return {
+                success: true,
+                message: 'El usuario existe en la base de datos.'
+            };
+        } else {
+            return {
+                success: false,
+                message: 'El usuario no existe en la base de datos.'
+            };
+        }
+    } catch (error) {
+        console.error('Error al comprobar la existencia del usuario:', error);
+        return {
+            success: false,
+            message: 'Hubo un error al verificar la existencia del usuario. Por favor, inténtalo de nuevo.'
+        };
+    }
+}
+
