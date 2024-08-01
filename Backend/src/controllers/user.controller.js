@@ -6,7 +6,9 @@ import { findRoleById,
     validateUsername,
     findUserByUsername,
     validatePassword,
-    getUserIdByUsername
+    getUserIdByUsername,
+    checkUserExistence,
+    updatePassword
  } from '../utils/user.utils.js';
 
 
@@ -80,7 +82,7 @@ export const getUserbyUsername = async (req, res) => {
         console.error('Error fetching user:', error);
         res.status(500).json({ message: 'Internal server error' });
     }
-}
+};
 
 export const getidbyUsername = async (req, res) => {
     const { username } = req.body;
@@ -119,6 +121,36 @@ export const getUsersUnAproval = async (req, res) => {
         res.status(200).json(formattedUsers);
     } catch (error) {
         console.error(error);
+        return res.status(500).json({ success: false, message: 'Error del servidor' });
+    }
+};
+
+export const recoverPassword = async (req, res) => {
+    const {username, email, password} = req.body;
+    try {        
+        const passvalid = validatePassword(password);
+        if (!passvalid.success) {
+            return res.status(401).json({success: false, message: passvalid.message});
+        }
+        const update = await updatePassword(username, email, password);
+        if (!update.success) {
+            return res.status(400).json({ success: false, message: update.message });
+        }
+        return res.status(201).json({ success: true, message: update.message });
+        
+    } catch (error) {
+        return res.status(500).json({ success: false, message: 'Error del servidor' });
+    }
+};
+
+export const userExistandEmail = async (req, res) => {
+    const {username, email} = req.body;
+    try {
+        const checkdata = await checkUserExistence(username, email);
+        if (!checkdata.success) {
+            return res.status(401).json({ success: false, message: checkdata.message });    
+        } 
+    } catch (error) {
         return res.status(500).json({ success: false, message: 'Error del servidor' });
     }
 }
