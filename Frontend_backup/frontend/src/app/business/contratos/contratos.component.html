@@ -1,0 +1,57 @@
+<div style="margin-top: 20px;" class="card-container">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Contratos</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-spinner *ngIf="isLoadingProfile"></mat-spinner>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Buscar</mat-label>
+        <input matInput (keyup)="applyFilter($event)" placeholder="Buscar en la tabla">
+      </mat-form-field>
+
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        <ng-container matColumnDef="idcontract">
+          <th mat-header-cell *matHeaderCellDef> Contrato ID </th>
+          <td mat-cell *matCellDef="let element"> {{ element.idcontract }} </td>
+        </ng-container>
+        <ng-container matColumnDef="startdate">
+          <th mat-header-cell *matHeaderCellDef> Fecha de Inicio </th>
+          <td mat-cell *matCellDef="let element"> {{ element.startdate }} </td>
+        </ng-container>
+        <ng-container matColumnDef="enddate">
+          <th mat-header-cell *matHeaderCellDef> Expira </th>
+          <td mat-cell *matCellDef="let element"> {{ element.enddate }} </td>
+        </ng-container>
+        <ng-container matColumnDef="servicename">
+          <th mat-header-cell *matHeaderCellDef> Servicio </th>
+          <td mat-cell *matCellDef="let element"> {{ element.servicename }} </td>
+        </ng-container>
+        <ng-container matColumnDef="velocity">
+          <th mat-header-cell *matHeaderCellDef> Velocidad </th>
+          <td mat-cell *matCellDef="let element"> {{ element.velocity }} </td>
+        </ng-container>
+        <ng-container matColumnDef="price">
+          <th mat-header-cell *matHeaderCellDef> Pago </th>
+          <td mat-cell *matCellDef="let element"> {{ element.price }} </td>
+        </ng-container>
+        <ng-container matColumnDef="identification">
+          <th mat-header-cell *matHeaderCellDef> Cliente C.I. </th>
+          <td mat-cell *matCellDef="let element" (click)="onRowClicked(element)"> {{ element.identification }} </td>
+        </ng-container>
+        <ng-container matColumnDef="descriptionpago">
+          <th mat-header-cell *matHeaderCellDef> Tipo de Pago </th>
+          <td mat-cell *matCellDef="let element"> {{ element.descriptionpago }} </td>
+        </ng-container>
+        <ng-container matColumnDef="descriptioncontrato">
+          <th mat-header-cell *matHeaderCellDef> Estado </th>
+          <td mat-cell *matCellDef="let element"> {{ element.descriptioncontrato }} </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+      <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons aria-label="Selecciona una página"></mat-paginator>
+    </mat-card-content>
+  </mat-card>
+</div>
