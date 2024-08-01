@@ -125,6 +125,27 @@ y la implementasmosen user.controller.js:
 
 ![image](https://github.com/user-attachments/assets/c77c065e-de00-4283-aaf7-44d886212045)
 
+Cuando el `username` y el `password` son correctos y estan registrados en la base de datos:
+
+![image](https://github.com/user-attachments/assets/8b148404-8fbe-47bd-ac0a-0c5276c6d24d)
+
+Al darle a Recuperar nos abre un `dialog` para poder ingresar el nuevo password:
+![image](https://github.com/user-attachments/assets/37cdea37-ea34-4033-a179-a08452f192f8)
+
+recordemos que si ingresamos un password que no este dentro de los parametros, nos impedirá actualizar el password:
+![image](https://github.com/user-attachments/assets/ddaad69e-83ec-46e2-8faf-8b88c725c485)
+
+![image](https://github.com/user-attachments/assets/44bde4f0-e6a0-447c-b499-fae3ab002f54)
+
+Y si cumple con los parámetros pues nos permite realizar el update:
+
+![image](https://github.com/user-attachments/assets/59589256-7b9d-4bca-a464-9e32c22b1927)
+
+
+
+![image](https://github.com/user-attachments/assets/c57cf708-2649-4699-84d8-d5d344305ac5)
+
+
 
 
 
