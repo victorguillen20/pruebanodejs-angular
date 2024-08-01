@@ -130,11 +130,11 @@ export const recoverPassword = async (req, res) => {
     try {        
         const passvalid = validatePassword(password);
         if (!passvalid.success) {
-            return res.status(401).json({success: false, message: passvalid.message});
+            return res.status(201).json({success: false, message: passvalid.message});
         }
         const update = await updatePassword(username, email, password);
         if (!update.success) {
-            return res.status(400).json({ success: false, message: update.message });
+            return res.status(201).json({ success: false, message: update.message });
         }
         return res.status(201).json({ success: true, message: update.message });
         
@@ -148,8 +148,9 @@ export const userExistandEmail = async (req, res) => {
     try {
         const checkdata = await checkUserExistence(username, email);
         if (!checkdata.success) {
-            return res.status(401).json({ success: false, message: checkdata.message });    
+            return res.status(201).json({ success: false, message: checkdata.message });    
         } 
+        return res.status(200).json({ success: true, message: checkdata.message });
     } catch (error) {
         return res.status(500).json({ success: false, message: 'Error del servidor' });
     }
