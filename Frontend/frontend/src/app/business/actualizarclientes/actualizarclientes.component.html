@@ -1,0 +1,42 @@
+<div class="card-container">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Actualizar Cliente</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form [formGroup]="actualizaForm" class="form-custom">
+        <mat-form-field class="input-custom">
+          <mat-label>Nombre</mat-label>
+          <input matInput formControlName="name">
+        </mat-form-field>
+        <mat-form-field class="input-custom">
+          <mat-label>Apellido</mat-label>
+          <input matInput formControlName="lastname">
+        </mat-form-field>
+        <mat-form-field class="input-custom">
+          <mat-label>Identificación</mat-label>
+          <input matInput formControlName="identification" [readonly]="true">
+        </mat-form-field>
+        <mat-form-field class="input-custom">
+          <mat-label>Email</mat-label>
+          <input matInput formControlName="email">
+        </mat-form-field>
+        <mat-form-field class="input-custom">
+          <mat-label>Celular</mat-label>
+          <input matInput formControlName="phonenumber">
+        </mat-form-field>
+        <mat-form-field class="input-custom">
+          <mat-label>Dirección</mat-label>
+          <input matInput formControlName="address">
+        </mat-form-field>
+        <mat-form-field class="input-custom">
+          <mat-label>Referencia</mat-label>
+          <input matInput formControlName="referenceaddress">
+        </mat-form-field>
+        <div class="flex">
+          <button mat-flat-button color="primary" (click)="actualizarCliente()">Actualizar Cliente</button>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

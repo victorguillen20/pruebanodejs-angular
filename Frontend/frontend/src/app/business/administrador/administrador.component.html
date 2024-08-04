@@ -1,0 +1,65 @@
+<div style="margin-top: 20px;" class="card-container">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Usuarios Gestores y Cajeros</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-spinner *ngIf="isLoadingProfile"></mat-spinner>
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        <ng-container matColumnDef="username">
+          <th mat-header-cell *matHeaderCellDef> Usuario </th>
+          <td mat-cell *matCellDef="let element" (click)="onRowClicked(element)"> {{ element.username }} </td>
+        </ng-container>
+        <ng-container matColumnDef="email">
+          <th mat-header-cell *matHeaderCellDef> Email </th>
+          <td mat-cell *matCellDef="let element"> {{ element.email }} </td>
+        </ng-container>
+        <ng-container matColumnDef="creationdate">
+          <th mat-header-cell *matHeaderCellDef> Fecha de Creación </th>
+          <td mat-cell *matCellDef="let element"> {{ element.creationdate }} </td>
+        </ng-container>
+        <ng-container matColumnDef="rolname">
+          <th mat-header-cell *matHeaderCellDef> Rol </th>
+          <td mat-cell *matCellDef="let element"> {{ element.rolname }} </td>
+        </ng-container>
+        <ng-container matColumnDef="description">
+          <th mat-header-cell *matHeaderCellDef> Estado </th>
+          <td mat-cell *matCellDef="let element"> {{ element.description }} </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+      <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons aria-label="Selecciona una página"></mat-paginator>
+    </mat-card-content>
+  </mat-card>
+</div>
+<div style="margin-top: 20px;" class="card-container">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Actualizar Usuario</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form [formGroup]="updateUserForm" (ngSubmit)="onSubmit()">
+        <mat-form-field appearance="fill" class="form-field">
+          <mat-label>Email</mat-label>
+          <input matInput formControlName="email" placeholder="Ingrese el email">
+        </mat-form-field>
+
+        <mat-form-field style="margin-left: 20px;" appearance="fill" class="form-field">
+          <mat-label>Estado</mat-label>
+          <mat-select formControlName="status" placeholder="Seleccionar estado">
+            <mat-option *ngFor="let option of statusOptions" [value]="option.value">
+              {{ option.viewValue }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <button mat-raised-button style="margin-left: 20px;" color="primary" type="submit" class="update-button">Actualizar</button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>
+
+
+
+

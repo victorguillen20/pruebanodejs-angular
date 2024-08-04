@@ -1,0 +1,55 @@
+<div class="card-container">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Actualizacion de Contratos</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form [formGroup]="contratoForm" class="form-custom">
+
+        <mat-form-field class="input-custom">
+          <mat-label>Inicio del Contrato</mat-label>
+          <input matInput [matDatepicker]="startPicker" formControlName="startdate" readonly>
+          <mat-datepicker-toggle matSuffix [for]="startPicker"></mat-datepicker-toggle>
+          <mat-datepicker #startPicker></mat-datepicker>
+        </mat-form-field>
+        <mat-form-field class="input-custom">
+          <mat-label>Fin del Contrato</mat-label>
+          <input matInput [matDatepicker]="endPicker" formControlName="enddate" readonly>
+          <mat-datepicker-toggle matSuffix [for]="endPicker"></mat-datepicker-toggle>
+          <mat-datepicker #endPicker></mat-datepicker>
+        </mat-form-field>
+        <mat-form-field class="input-custom">
+          <mat-label>Servicio</mat-label>
+          <mat-select formControlName="service_idservice">
+            <mat-option value="1">Paquete básico</mat-option>
+            <mat-option value="2">Paquete intermedio</mat-option>
+            <mat-option value="3">Paquete Gamer</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field class="input-custom">
+          <mat-label>Estado</mat-label>
+          <mat-select formControlName="statuscontract_idstatus">
+            <mat-option value="VIG">Contrato vigente</mat-option>
+            <mat-option value="SUS">Contrato sustituido</mat-option>
+            <mat-option value="FIN">Contrato finalizado</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field class="input-custom">
+          <mat-label>Identificación</mat-label>
+          <input matInput formControlName="identification" [readonly]="true">
+        </mat-form-field>
+        <mat-form-field class="input-custom">
+          <mat-label>Método de pago</mat-label>
+          <mat-select formControlName="methodpayment_idmethodpayment">
+            <mat-option value="1">Contado</mat-option>
+            <mat-option value="2">Tarajeta de crédito</mat-option>
+            <mat-option value="3">Crédito</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <div class="flex">
+          <button mat-flat-button color="primary" (click)="actualizarContrato()">Actualizar Contrato</button>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

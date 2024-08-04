@@ -1,0 +1,15 @@
+<div style="margin-top: 20px;" class="card-container">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Crear Clientes con Archivo</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <!-- Botón para seleccionar el archivo -->
+      <input type="file" (change)="onFileSelected($event)" />
+    </mat-card-content>
+    <mat-card-actions>
+      <!-- Botón para crear clientes -->
+      <button mat-raised-button color="primary" (click)="createClients()">Registrar Clientes</button>
+    </mat-card-actions>
+  </mat-card>
+</div>

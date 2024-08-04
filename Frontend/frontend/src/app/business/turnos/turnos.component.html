@@ -1,0 +1,36 @@
+<div class="card-container">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Turnos</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form [formGroup]="turnoForm" class="form-custom">
+        <mat-form-field class="input-custom">
+          <mat-label>Descripción</mat-label>
+          <mat-select formControlName="description">
+            <mat-option value="AC">Atención al Cliente</mat-option>
+            <mat-option value="PS">Pago de Servicio</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field class="input-custom">
+          <mat-label>Fecha</mat-label>
+          <input matInput [matDatepicker]="picker" formControlName="date" readonly>
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        <mat-form-field class="input-custom">
+          <mat-label>Caja</mat-label>
+          <mat-select formControlName="cash_cashid">
+            <mat-option value="1">Caja de Atención al Cliente</mat-option>
+            <mat-option value="2">Punto de Servicio del Cajero</mat-option>
+            <mat-option value="3">Caja de Servicios de Internet</mat-option>
+            <mat-option value="4">Estación de Gestión de Pagos</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <div class="flex">
+          <button mat-flat-button color="primary" (click)="registrarTurno()">Registrar Turno</button>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

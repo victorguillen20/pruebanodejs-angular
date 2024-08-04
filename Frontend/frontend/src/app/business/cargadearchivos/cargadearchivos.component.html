@@ -1,0 +1,15 @@
+<div style="margin-top: 20px;" class="card-container">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Carga de Archivos</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <!-- Botón para seleccionar el archivo -->
+      <input type="file" (change)="onFileSelected($event)" />
+    </mat-card-content>
+    <mat-card-actions>
+      <!-- Botón para crear usuarios -->
+      <button mat-raised-button color="primary" (click)="createUsers()">Crear Usuarios</button>
+    </mat-card-actions>
+  </mat-card>
+</div>

@@ -1,0 +1,87 @@
+<div class="mb-12 grid gap-y-10 gap-x-6 md:grid-cols-2 xl:grid-cols-4">
+  <div class="relative flex flex-col bg-clip-border rounded-xl bg-white text-gray-700 shadow-md">
+    <div class="bg-clip-border mx-4 rounded-xl overflow-hidden bg-gradient-to-tr from-blue-600 to-blue-400 text-white shadow-blue-500/40 shadow-lg absolute -mt-4 grid h-16 w-16 place-items-center">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="w-6 h-6 text-white">
+        <path d="M18.375 2.25c-1.035 0-1.875.84-1.875 1.875v15.75c0 1.035.84 1.875 1.875 1.875h.75c1.035 0 1.875-.84 1.875-1.875V4.125c0-1.036-.84-1.875-1.875-1.875h-.75zM9.75 8.625c0-1.036.84-1.875 1.875-1.875h.75c1.036 0 1.875.84 1.875 1.875v11.25c0 1.035-.84 1.875-1.875 1.875h-.75a1.875 1.875 0 01-1.875-1.875V8.625zM3 13.125c0-1.036.84-1.875 1.875-1.875h.75c1.036 0 1.875.84 1.875 1.875v6.75c0 1.035-.84 1.875-1.875 1.875h-.75A1.875 1.875 0 013 19.875v-6.75z"></path>
+      </svg>
+    </div>
+    <div class="p-4 text-right">
+      <p class="block antialiased font-sans text-sm leading-normal font-normal text-blue-gray-600">Total de Usuarios</p>
+      <h4 class="block antialiased tracking-normal font-sans text-2xl font-semibold leading-snug text-blue-gray-900">{{ totalUsuarios }}</h4>
+    </div>
+    <div class="border-t border-blue-gray-50 p-4"></div>
+  </div>
+  <div class="relative flex flex-col bg-clip-border rounded-xl bg-white text-gray-700 shadow-md">
+    <div class="bg-clip-border mx-4 rounded-xl overflow-hidden bg-gradient-to-tr from-blue-600 to-blue-400 text-white shadow-blue-500/40 shadow-lg absolute -mt-4 grid h-16 w-16 place-items-center">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="w-6 h-6 text-white">
+        <path d="M18.375 2.25c-1.035 0-1.875.84-1.875 1.875v15.75c0 1.035.84 1.875 1.875 1.875h.75c1.035 0 1.875-.84 1.875-1.875V4.125c0-1.036-.84-1.875-1.875-1.875h-.75zM9.75 8.625c0-1.036.84-1.875 1.875-1.875h.75c1.036 0 1.875.84 1.875 1.875v11.25c0 1.035-.84 1.875-1.875 1.875h-.75a1.875 1.875 0 01-1.875-1.875V8.625zM3 13.125c0-1.036.84-1.875 1.875-1.875h.75c1.036 0 1.875.84 1.875 1.875v6.75c0 1.035-.84 1.875-1.875 1.875h-.75A1.875 1.875 0 013 19.875v-6.75z"></path>
+      </svg>
+    </div>
+    <div class="p-4 text-right">
+      <p class="block antialiased font-sans text-sm leading-normal font-normal text-blue-gray-600">Usuarios Activos</p>
+      <h4 class="block antialiased tracking-normal font-sans text-2xl font-semibold leading-snug text-blue-gray-900"> {{ totalActivos }} </h4>
+    </div>
+    <div class="border-t border-blue-gray-50 p-4"></div>
+  </div>
+  <div class="relative flex flex-col bg-clip-border rounded-xl bg-white text-gray-700 shadow-md">
+    <div class="bg-clip-border mx-4 rounded-xl overflow-hidden bg-gradient-to-tr from-pink-600 to-pink-400 text-white shadow-pink-500/40 shadow-lg absolute -mt-4 grid h-16 w-16 place-items-center">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="w-6 h-6 text-white">
+        <path fill-rule="evenodd" d="M7.5 6a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM3.751 20.105a8.25 8.25 0 0116.498 0 .75.75 0 01-.437.695A18.683 18.683 0 0112 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 01-.437-.695z" clip-rule="evenodd"></path>
+      </svg>
+    </div>
+    <div class="p-4 text-right">
+      <p class="block antialiased font-sans text-sm leading-normal font-normal text-blue-gray-600">Usuarios Inactivos</p>
+      <h4 class="block antialiased tracking-normal font-sans text-2xl font-semibold leading-snug text-blue-gray-900"> {{ totalInactivos }} </h4>
+    </div>
+    <div class="border-t border-blue-gray-50 p-4"></div>
+  </div>
+  <div class="relative flex flex-col bg-clip-border rounded-xl bg-white text-gray-700 shadow-md">
+    <div class="bg-clip-border mx-4 rounded-xl overflow-hidden bg-gradient-to-tr from-red-500 to-red-400 text-white shadow-red-500/40 shadow-lg absolute -mt-4 grid h-16 w-16 place-items-center">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" aria-hidden="true" class="w-6 h-6">
+        <path d="M12 1.75a5.25 5.25 0 00-5.25 5.25V10H5.5A2.25 2.25 0 003.25 12.25v8.5A2.25 2.25 0 005.5 23h13a2.25 2.25 0 002.25-2.25v-8.5A2.25 2.25 0 0018.5 10h-1.25V7a5.25 5.25 0 00-5.25-5.25zm-3.75 5.25A3.75 3.75 0 0112 3.25 3.75 3.75 0 0115.75 7v3H8.25V7zM5.5 11.5h13a.75.75 0 01.75.75v8.5a.75.75 0 01-.75.75h-13a.75.75 0 01-.75-.75v-8.5a.75.75 0 01.75-.75zM12 15.25a.75.75 0 00-.75.75v2a.75.75 0 001.5 0v-2a.75.75 0 00-.75-.75z"/>
+      </svg>
+    </div>
+    <div class="p-4 text-right">
+      <p class="block antialiased font-sans text-sm leading-normal font-normal text-blue-gray-600">Usuarios Bloqueados</p>
+      <h4 class="block antialiased tracking-normal font-sans text-2xl font-semibold leading-snug text-blue-gray-900">{{ totalBloqueados }}</h4>
+    </div>
+    <div class="border-t border-blue-gray-50 p-4">
+    </div>
+  </div>
+</div>
+<div style="margin-top: 20px;" class="card-container">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Cajas</mat-card-title>
+      <mat-form-field appearance="fill" style="width: 100%; margin-top: 10px;">
+        <mat-label>Buscar</mat-label>
+        <input matInput (keyup)="applyFilter($event)" placeholder="Buscar por fecha, gestor, cajero o caja">
+      </mat-form-field>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-spinner *ngIf="isLoadingCash"></mat-spinner>
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        <ng-container matColumnDef="cashdescription">
+          <th mat-header-cell *matHeaderCellDef> Caja </th>
+          <td mat-cell *matCellDef="let element"> {{ element.cashdescription }} </td>
+        </ng-container>
+        <ng-container matColumnDef="username">
+          <th mat-header-cell *matHeaderCellDef> Cajero </th>
+          <td mat-cell *matCellDef="let element"> {{ element.username }} </td>
+        </ng-container>
+        <ng-container matColumnDef="creationdate">
+          <th mat-header-cell *matHeaderCellDef> Fecha de Creación </th>
+          <td mat-cell *matCellDef="let element"> {{ element.creationdate }} </td>
+        </ng-container>
+        <ng-container matColumnDef="usercreate">
+          <th mat-header-cell *matHeaderCellDef> Gestor </th>
+          <td mat-cell *matCellDef="let element"> {{ element.usercreate }} </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+      <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons aria-label="Selecciona una página"></mat-paginator>
+    </mat-card-content>
+  </mat-card>
+</div>
+
