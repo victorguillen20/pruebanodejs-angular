@@ -141,6 +141,37 @@ Y si cumple con los parámetros pues nos permite realizar el update:
 
 ![image](https://github.com/user-attachments/assets/59589256-7b9d-4bca-a464-9e32c22b1927)
 
+## Implementación de JWT
+Para poder generar el JWT en el backend se crearon dos archivos, uno de configuración para generar la clave secreta y un middleware:
+
+![image](https://github.com/user-attachments/assets/ea08c439-98e2-4b90-9dc6-1b4b689f1530)
+
+![image](https://github.com/user-attachments/assets/d3bbad27-06df-41b7-b001-3480ae2358fc)
+
+![image](https://github.com/user-attachments/assets/240840c5-19a2-4d57-8f15-1041c657c1c7)
+
+y de esta manera lo generamos y lo pasamos en respuesta:
+
+![image](https://github.com/user-attachments/assets/2503c6e1-ab17-4ec3-a08c-7c537e3f590c)
+
+este es un ejemplo de como implementamos todas nuestras rutas seguras:
+
+![image](https://github.com/user-attachments/assets/e85950a3-1110-40a2-bbe9-08360ff3a03a)
+
+este es el `interceptor` que aplicamos en el frontend:
+
+![image](https://github.com/user-attachments/assets/3d2c592f-5cb6-47eb-9393-6333b0db23a3)
+
+
+
+
+
+
+
+
+
+
+
 
 
 
