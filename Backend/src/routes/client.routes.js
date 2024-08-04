@@ -7,16 +7,17 @@ import { registerClient,
     updateClient,
     getAllContracts
 } from '../controllers/client.controller.js'
+import { authMiddleware } from '../middleware/authMiddleware.js'
 
 const router = Router();
 
 
-router.post("/client/register", registerClient);
-router.post("/client/update", updateClient);
-router.post("/client/profile", getClient);
-router.post("/client/allprofiles", getAllClients);
-router.post("/client/contract/register", registerContract);
-router.post("/client/contract/update", updateContract);
-router.post("/client/contract/allcontracts", getAllContracts);
+router.post("/client/register", authMiddleware, registerClient);
+router.post("/client/update", authMiddleware, updateClient);
+router.post("/client/profile", authMiddleware, getClient);
+router.post("/client/allprofiles", authMiddleware, getAllClients);
+router.post("/client/contract/register", authMiddleware, registerContract);
+router.post("/client/contract/update", authMiddleware, updateContract);
+router.post("/client/contract/allcontracts", authMiddleware, getAllContracts);
 
 export default router;
